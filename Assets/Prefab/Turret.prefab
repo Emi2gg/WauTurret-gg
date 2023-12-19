@@ -835,6 +835,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6326287793064527684, guid: 69e19690ac2472d46a318d28d75bc97b, type: 3}
+      propertyPath: autoRandomSeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326287793064527684, guid: 69e19690ac2472d46a318d28d75bc97b, type: 3}
       propertyPath: TrailModule.enabled
       value: 0
       objectReference: {fileID: 0}
