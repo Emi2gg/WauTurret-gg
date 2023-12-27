@@ -13,16 +13,17 @@ public class RaycastShooting : MonoBehaviour
     [SerializeField] private GameObject _impactEffect = null;
     [SerializeField] private float _shootingCD = 1f;
     [SerializeField] private Animator anim = null;
+    [SerializeField] private int _DestroyDelay = 1;
 
     private float _currentCD = 0;
 
-    [Header("AOE settings")] 
+    [Header("AOE settings")]
     [SerializeField] private bool _isAOE = false;
 
     [SerializeField] private float _radius = 2f;
- /// <summary>
- ///   P== ------------- E 
- /// </summary>
+    /// <summary>
+    ///   P== ------------- E 
+    /// </summary>
     private void FixedUpdate()
     {
         if (_currentCD <= 0)
@@ -33,13 +34,13 @@ public class RaycastShooting : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Enemy"))
                 {
-		    anim.SetTrigger("Attack");
+                    anim.SetTrigger("Attack");
                     if (_isAOE)
                     {
                         var spherecast = Physics.SphereCastAll(hit.point, _radius,
                             _cannon.forward);
                         _audioSource.Play();
-                        
+
                         for (int i = 0; i < spherecast.Length; i++)
                         {
                             var rayHit = spherecast[i];
@@ -47,11 +48,11 @@ public class RaycastShooting : MonoBehaviour
                             {
                                 rayHit.collider.GetComponent<Health>().ReceiveDamage(_damage);
                                 EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null
-                                    , rayHit.point, Quaternion.identity, null)); 
+                                    , rayHit.point, Quaternion.identity, null));
                             }
                         }
                         _currentCD = _shootingCD;
-                        
+
                     }
                     else
                     {
@@ -68,11 +69,11 @@ public class RaycastShooting : MonoBehaviour
         }
     }
 
-     private void Update()
-     {
-         if (_currentCD > 0)
-         {
-             _currentCD -= Time.deltaTime;
-         }
-     }
+    private void Update()
+    {
+        if (_currentCD > 0)
+        {
+            _currentCD -= Time.deltaTime;
+        }
+    }
 }
