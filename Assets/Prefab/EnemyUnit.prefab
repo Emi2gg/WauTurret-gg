@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185669ee52eba47a1b019d97b51a925c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 2000
+  _rotationSpeed: 200
 --- !u!1 &3409152813022600946
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e297e42d966483884aa741f5283763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.6
+  speed: 2
   minDistance: 0.2
 --- !u!136 &3409152813022600942
 CapsuleCollider:
@@ -322,7 +322,7 @@ MonoBehaviour:
   _onHealthChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 22100000, guid: af740f8bdf8c9ec41b837502fe1f88e4, type: 2}
+      - m_Target: {fileID: 3409152813022600946}
         m_TargetAssemblyTypeName: AnimationEnemy, Assembly-CSharp
         m_MethodName: OnHealthChange
         m_Mode: 0

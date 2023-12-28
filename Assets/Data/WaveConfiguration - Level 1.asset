@@ -18,7 +18,7 @@ MonoBehaviour:
     strongEnemy: 0
   - weakEnemy: 5
     midEnemy: 0
-    strongEnemy: 0
+    strongEnemy: 1
   - weakEnemy: 0
     midEnemy: 0
     strongEnemy: 1

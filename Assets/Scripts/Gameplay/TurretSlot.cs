@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TurretSlot : MonoBehaviour
 {
+  // TurretSlot.GetGameObject (TurretPlacement);
+
    private bool _isOccupied = false;
 
    public bool IsOccupied => _isOccupied;
