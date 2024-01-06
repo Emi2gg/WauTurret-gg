@@ -5,19 +5,19 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField]public int maxHealth = 100
+    public int maxHealth = 100;
     public int currentHealth = 100;
-    public HealthBar healthBar;
+    public HealthBar HealthBar;
 
 
-    [SerializeField]private UnityEvent<float> _onHealthChanged = new ();
-    [SerializeField]private UnityEvent _onDeath = new ();
+    [SerializeField] public UnityEvent<float> _onHealthChanged = new();
+    [SerializeField] public UnityEvent _onDeath = new();
     // Start is called before the first frame update
-    void OnEnable()
+    void Start()
     {
-       currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-        
+        currentHealth = maxHealth;
+        HealthBar.SetMaxHealth(maxHealth);
+
     }
 
     public void ReceiveDamage(int damage)
@@ -25,15 +25,17 @@ public class Health : MonoBehaviour
         //_currentHealth = _currentHealth - damage;
         currentHealth -= damage;
 
-        healthBar.SetHealth(currentHealth);
 
         if (currentHealth < 0)
         {
             currentHealth = 0;
         }
+
+        HealthBar.SetHealth(currentHealth);
+
         _onHealthChanged?.Invoke((float)currentHealth / maxHealth);
-        if(currentHealth == 0)
+        if (currentHealth == 0)
             _onDeath?.Invoke();
-        
+
     }
 }

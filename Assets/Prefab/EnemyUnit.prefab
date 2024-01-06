@@ -318,11 +318,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f80279797151408f8d5518f401c7703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100
+  maxHealth: 100
+  currentHealth: 100
+  HealthBar: {fileID: 0}
   _onHealthChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3409152813022600946}
+      - m_Target: {fileID: 6112120125790737181}
         m_TargetAssemblyTypeName: AnimationEnemy, Assembly-CSharp
         m_MethodName: OnHealthChange
         m_Mode: 0
