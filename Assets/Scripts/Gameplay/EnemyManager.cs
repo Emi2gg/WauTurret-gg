@@ -12,7 +12,9 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private WaveConfiguration _waveConfiguration;
     [SerializeField] private List<string> _pathNames = new();
     private List<Transform> _spawnpoints = new();
+
     [SerializeField] private GameObject _weakEnemyPrefab;
+
     [SerializeField] private GameObject _midEnemyPrefab;
     [SerializeField] private GameObject _strongEnemyPrefab;
     [SerializeField] private float _timeToNextWave = 5f;
